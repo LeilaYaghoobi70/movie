@@ -1,8 +1,8 @@
-package com.example.domain.model
+package com.example.remote
 
 import com.google.gson.annotations.SerializedName
 
-data class MyClass(
+data class MovieDto(
     @SerializedName("Id")
     var Id: String,
     @SerializedName("Rank")
@@ -22,4 +22,3 @@ data class MyClass(
     @SerializedName("IMDbRatingCount")
     var IMDbRatingCount: String,
 )
-
