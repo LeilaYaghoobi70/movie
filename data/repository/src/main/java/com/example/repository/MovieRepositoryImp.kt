@@ -3,25 +3,28 @@ package com.example.repository
 import com.example.dataSoure.MovieDataSource
 import com.example.domain.model.Movie
 import com.example.domain.repository.MovieRepository
+import com.example.domain.result.Result
+import com.example.domain.result.Status
 import com.example.mapper.toDomain
-import  kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class MovieRepositoryImp
 @Inject constructor(
     private val movieDataSource: MovieDataSource,
 ) : MovieRepository {
-    override suspend fun getMovies(): Flow<List<Movie>> = flow {
-        movieDataSource.getMovies().map { moviesRepo ->
+    override fun getMovies(): Flow<Result<List<Movie>>> = flow {
+        emit(Result(status = Status.LOADING, value = null, errorMessage = null))
+        val movie = movieDataSource.getMovies().map { moviesRepo ->
             moviesRepo.toDomain()
-
         }
-
+        emit(Result(status = Status.SUCCESS, value = movie, errorMessage = null))
     }
 
-    override suspend fun getMovie(id: Int): Flow<Movie> = flow {
-        movieDataSource.getMovie(id = id).toDomain()
+    override fun getMovie(id: Int): Flow<Result<Movie>> = flow {
+        emit(Result(status = Status.LOADING, value = null, errorMessage = null))
+        val movies = movieDataSource.getMovie(id = id).toDomain()
+        emit(Result(status = Status.SUCCESS, value = movies, errorMessage = null))
     }
 }
