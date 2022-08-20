@@ -13,14 +13,15 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "movie"
+
 include ':app'
 
-include(":data")
+include ':data'
 include ':data:repository'
 include ':data:remote'
 
-include(":feature")
-
-include ':feature:movies'
-include ':feature:movieDetail'
 include ':domain'
+
+include(":feature")
+include ':feature:movieList'
+include ':feature:movieDetails'

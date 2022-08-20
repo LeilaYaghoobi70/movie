@@ -29,6 +29,13 @@ android {
         jvmTarget = '1.8'
     }
     kapt { generateStubs = true }
+    sourceSets {
+        main {
+            java {
+                srcDirs 'src/main/java', 'src/main/java/com'
+            }
+        }
+    }
 }
 
 dependencies {

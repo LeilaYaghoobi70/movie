@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">movie</string>
+    <string name="title_moviedetails">Module Title</string>
 </resources>

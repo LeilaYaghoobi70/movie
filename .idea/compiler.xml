@@ -6,7 +6,11 @@
       <module name="movie.data.remote" target="11" />
       <module name="movie.data.repository" target="11" />
       <module name="movie.feature.movieDetail" target="11" />
+      <module name="movie.feature.movieDetails" target="11" />
+      <module name="movie.feature.movieelist" target="11" />
+      <module name="movie.feature.movieList" target="11" />
       <module name="movie.feature.movies" target="11" />
+      <module name="movie.movielist" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
