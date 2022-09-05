@@ -1,12 +1,11 @@
-package com.example.movies.base
+package com.example.movielist.base
 
-import exmple.movies.base.Intent
 import exmple.movies.base.State
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.StateFlow
 
 
-interface Model<s : State, I : Intent> {
-    val intentChannel: MutableSharedFlow<I>
+interface Model<s : State, I : Event> {
+    fun event(event: I)
     val uiState: StateFlow<s>
 }

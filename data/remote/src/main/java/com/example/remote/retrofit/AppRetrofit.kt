@@ -1,6 +1,7 @@
 package com.example.remote.retrofit
 
 import okhttp3.HttpUrl
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -10,12 +11,9 @@ class AppRetrofit(
     private val httpUrl: HttpUrl,
 ) {
 
-    fun create(): Retrofit {
-        val retrofit = Retrofit.Builder()
+    fun create(): Retrofit = Retrofit.Builder()
             .baseUrl(httpUrl)
             .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create()).build()
 
-        return retrofit.build()
-    }
 }

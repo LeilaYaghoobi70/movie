@@ -11,7 +11,7 @@ class MovieDataSourceImp
         private val movieApi: MovieApi
     ): MovieDataSource {
     override suspend fun getMovies(): List<MovieRepo> =
-       movieApi.getMovies().map {
+       movieApi.getMovies().items.map {
            it.toRepo()
        }
 

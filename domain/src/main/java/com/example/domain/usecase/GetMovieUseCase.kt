@@ -11,7 +11,7 @@ class GetMovieUseCase @Inject constructor(
     private val movieRepository: MovieRepository,
 ) {
 
-    suspend fun execute(
+    fun execute(
         id: Int
     ): Flow<Result<Movie>> = movieRepository.getMovie(id = id)
 }

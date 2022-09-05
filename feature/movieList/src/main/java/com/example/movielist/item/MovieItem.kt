@@ -1,13 +1,13 @@
 package com.example.movielist.item
 
 data class MovieItem(
-    val Id: String,
-    val Rank: String,
-    val Title: String,
-    val FullTitle: String,
-    val Year: String,
-    val Image: String,
-    val Crew: String,
-    val IMDbRating: String,
-    val IMDbRatingCount: String,
+    val mId: String?,
+    val mRank: String?,
+    val mTitle: String?,
+    val mFullTitle: String?,
+    val mYear: String?,
+    val mImage: String?,
+    val mCrew: String?,
+    val mIMDbRating: String?,
+    val mIMDbRatingCount: String?,
 )
