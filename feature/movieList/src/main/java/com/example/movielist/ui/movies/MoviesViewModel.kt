@@ -34,7 +34,10 @@ class MoviesViewModel @Inject constructor(
                 navigateUp()
             }
             is MoviesEvent.GetDetailMovie -> {
-                getMovieDetail()
+                getMovieDetail(event.movieId)
+            }
+            is MoviesEvent.RestState -> {
+                restState()
             }
         }
     }
@@ -63,8 +66,12 @@ class MoviesViewModel @Inject constructor(
         viewModelState.update { MoviesState.NavigateUp }
     }
 
-    private fun getMovieDetail() {
-        viewModelState.update { MoviesState.GetMovieDetail }
+    private fun getMovieDetail(movieId: String) {
+        viewModelState.update { MoviesState.GetMovieDetail(movieID = movieId) }
+    }
+
+    private fun restState(){
+        viewModelState.update { MoviesState.None }
     }
 
 }

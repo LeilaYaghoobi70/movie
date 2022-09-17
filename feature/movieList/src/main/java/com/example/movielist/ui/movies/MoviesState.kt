@@ -1,7 +1,7 @@
 package com.example.movielist.ui.movies
 
 import com.example.movielist.item.MovieItem
-import exmple.movies.base.State
+import com.example.movielist.base.State
 
 
 sealed class MoviesState: State {
@@ -10,5 +10,5 @@ sealed class MoviesState: State {
     object Error:MoviesState()
     object None: MoviesState()
     object NavigateUp: MoviesState()
-    object GetMovieDetail: MoviesState()
+    data class GetMovieDetail(val movieID: String): MoviesState()
 }

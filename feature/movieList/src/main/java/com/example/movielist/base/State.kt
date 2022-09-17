@@ -1,3 +1,3 @@
-package exmple.movies.base
+package com.example.movielist.base
 
 interface State {}

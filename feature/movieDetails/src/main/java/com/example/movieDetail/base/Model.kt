@@ -1,4 +1,4 @@
-package com.example.movielist.base
+package com.example.movieDetail.base
 
 import kotlinx.coroutines.flow.StateFlow
 

@@ -4,8 +4,9 @@ import com.example.movielist.base.Event
 
 
 sealed class MoviesEvent : Event {
-    data class GetDetailMovie(val movieId: Int) : MoviesEvent()
+    data class GetDetailMovie(val movieId: String) : MoviesEvent()
     object NavigateUp: MoviesEvent()
+    object RestState: MoviesEvent()
 }
 
 

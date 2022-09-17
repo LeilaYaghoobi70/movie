@@ -1,5 +1,6 @@
-package com.example.movielist.base
+package com.example.movieDetail.base
 
+import com.example.detail.base.Event
 import kotlinx.coroutines.flow.StateFlow
 
 
